@@ -1,11 +1,11 @@
-d3.csv("/cities.csv", d3.autoType).then(data=>{
+d3.csv("./cities.csv", d3.autoType).then(data=>{
 	const cities = filterCities(data);
     //console.log('cities',cities);
     d3.select('.city-count').text(`Number of Cities: ${cities.length}`);
     drawCircle(cities);
 })
 
-d3.csv("/buildings.csv", d3.autoType).then(data=>{
+d3.csv("./buildings.csv", d3.autoType).then(data=>{
     const buildings = data.sort((a,b)=>b.height_ft-a.height_ft);
     //console.log('cities',buildings);
     drawRect(buildings);
